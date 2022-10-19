@@ -1,0 +1,4 @@
+#target/docs/*.html
+#target/docs/*.css
+#target/docs/images
+#target/docs/translations

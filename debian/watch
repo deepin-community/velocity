@@ -1,0 +1,6 @@
+version=3
+
+opts=uversionmangle=s/-(alpha|beta)/~$1/ \
+  http://svn.apache.org/repos/asf/velocity/engine/tags/ \
+  ([1-9].*)/ debian debian/orig-tar.sh
+

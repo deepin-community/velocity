@@ -1,0 +1,265 @@
+velocity (1.7-6) unstable; urgency=high
+
+  * Team upload.
+  * Update Vcs URLs to point to Salsa
+  * Patch for CVE-2020-13936 (Closes: #985220)
+  * Ship Apache NOTICE file with package
+
+ -- tony mancill <tmancill@debian.org>  Tue, 16 Mar 2021 21:07:58 -0700
+
+velocity (1.7-5.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Mon, 28 Dec 2020 14:41:58 +0100
+
+velocity (1.7-5) unstable; urgency=medium
+
+  * Team upload.
+  * Transition to the Servlet API 3.1 (Closes: #801042)
+  * Build with the DH sequencer instead of CDBS
+  * debian/control:
+    - Removed the deprecated DM-Upload-Allowed field
+    - Standards-Version updated to 3.9.8
+  * Moved the package to Git
+  * Switch to debhelper level 9
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 21 Jun 2016 16:12:55 +0200
+
+velocity (1.7-4) unstable; urgency=low
+
+  * Team upload.
+  * Update d/velocity.poms to install JAR in /usr/share/java
+    after maven-debian-helper behavior change. (Closes: #665076)
+
+ -- tony mancill <tmancill@debian.org>  Thu, 22 Mar 2012 11:35:12 -0700
+
+velocity (1.7-3) unstable; urgency=low
+
+  * Team upload.
+  * Update d/maven.rules for rebuild against libservlet2.5-java.
+    - Thanks to Brian Thomason and Miguel Landaeta. (Closes: #662810)
+
+ -- tony mancill <tmancill@debian.org>  Mon, 12 Mar 2012 20:51:51 -0700
+
+velocity (1.7-2) unstable; urgency=low
+
+  * Team upload.
+  * Update libservlet dependency to libservlet2.5-java (Closes: #658806)
+  * Bump Standards-Version to 3.9.3. No changes were required.
+
+ -- tony mancill <tmancill@debian.org>  Sun, 04 Mar 2012 20:19:01 +0000
+
+velocity (1.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [Steffen Moeller]
+  * Added Brian to uploaders.
+  * Allowed DM-Upload-Allowed for Brian
+
+ -- Brian Thomason <brian.thomason@eucalyptus.com>  Fri, 02 Dec 2011 20:36:38 +0000
+
+velocity (1.6.4-1) unstable; urgency=low
+
+  * Team upload
+  * Newer but not newest upstream version.
+  * Remove Arnaud and Wolfgang from Uploaders list.
+  * Switch to debhelper level 7.
+  * Update Standards-Version: 3.9.2.
+  * Remove bundled ivy*.jar from orig tarball.
+  * Switch to source format 3.0.
+  * Mangle alpha and beta versions in debian/watch.
+  * Document copyright and license of xmleb.jar.
+  * Use Maven to build the package. Parts of the documentation that require the
+    maven-site-plugin do not build yet.
+  * Refresh remaining patch.
+
+ -- Torsten Werner <twerner@debian.org>  Thu, 15 Sep 2011 17:30:37 +0200
+
+velocity (1.6.2-4) unstable; urgency=low
+
+  [ Onkar Shinde ]
+  * Replace build-dep openjdk-6-jdk with default-jdk. Adjust JAVA_HOME in rules
+    file accordingly.
+  * Replace openjdk-6-doc with default-jdk-doc. (Closes: #567293)
+  * Replace build/runtime dep liblogkit-java with libexcalibur-logkit-java.
+    Adjust DEB_JARS in rules file accordingly.
+  * debian/patches/build.patch - Update to add 'Class-Path' attribute in
+    manifest file with appropriate list of jar files.
+  * debian/patches/fix_example_scripts.patch - New patch to fix shebang lines
+    in example scripts. Fixes lintian warnings.
+
+ -- Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>  Sun, 07 Mar 2010 16:00:47 +0530
+
+velocity (1.6.2-3) unstable; urgency=low
+
+  * Bump up Standards-Version to 3.8.3
+     - add debian/README.source
+  * Add Build-Depends on openjdk-6-doc (Closes: #543106)
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Wed, 02 Sep 2009 22:34:33 +0100
+
+velocity (1.6.2-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 09 Aug 2009 23:51:24 +0200
+
+velocity (1.6.2-1) experimental; urgency=low
+
+  * New upstream version, add myself to Uploaders
+  * Change section to java, bump up Standards-Version to 3.8.2
+  * Bump up debhelper to 6
+  * Move debhelper and cdbs from Build-Depends-Indep to Build-Depends to
+    clear Lintian error
+  * Use openjdk-6-jdk instead of kaffe for the build
+  * Use default-jre-headless | java1-runtime-headless | java2-runtime-headless 
+    instead of kaffe | java1-runtime | java2-runtime for velocity Depends: 
+  * Update from libjdom0-java to libjdom1-java (Closes: #500536)
+  * Update from libcommons-collections-java to libcommons-collections3-java
+  * Add quilt to Build-Depends and use it to patch build.xml file to avoid
+    downloading jar files from the internet while building the documentation
+  * Add a dependency on libcommons-lang-java, libcommons-logging-java, 
+    liboro-java
+  * Update from libservlet2.3-java to libservlet2.5-java
+  * Move liblogkit-java, liblog4j1.2-java, libservlet2.5-java,
+    libwerken.xpath-java from Depends to Recommends
+  * Move ant from Depends to Suggest (Closes: #532640)
+  * Create a antlib definition for the tasks anakia and texen, and add 
+    the classpath information to the manifest in velocity.jar . This 
+    removes the need to install jar links under /usr/share/ant/lib, which 
+    have been removed. (Closes: #506018)
+  * Add watch file
+  * Remove all patches as they don't apply anymore and seem irrelevent now
+  * Add the Maven POM to the package,
+  * Add a Build-Depends-Indep dependency on maven-repo-helper
+  * Use mh_installpom and mh_installjar to install the POM and the jar to the
+    Maven repository
+  * Disable the user docs as it requires the use of a Maven plugin to generate 
+    them. Put the old control files in debian/old folder
+  * Remove the full text of the Apache 2.0 license
+  * Fix some Lintian warnings: add ${misc:Depends}, add copyright notice.
+  * Add Vcs-* fields and Homepage
+
+  [ Emmanuel Bourg and Sylvestre Ledru]
+  * Update of the URLs
+  * Rename Jakarta Commons to Apache Commons
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Tue, 07 Jul 2009 13:24:03 +0100
+
+velocity (1.4-5) unstable; urgency=low
+
+  * Removed Takashi Okamoto from the uploaders (closes: #352993).
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Tue, 25 Apr 2006 23:01:27 +0200
+
+velocity (1.4-4) unstable; urgency=low
+
+  * kaffe compiler transition (closes: #350694)
+  * (avdyk) I commented the test target because I have problems running
+    the tests with kaffe on powerpc
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Mon, 16 Jan 2006 15:10:48 +0100
+
+velocity (1.4-3) unstable; urgency=low
+
+  * Changed to depend on ant instead of libant1.6-java
+  * Added ant-optional to build-deps due to ant reorganization
+  * Registered javadoc api and manual with doc-base
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Tue, 04 Oct 2005 20:11:51 +0200
+
+velocity (1.4-2) unstable; urgency=low
+
+  * Changed libant1.6-java build-dep to ant
+  * Standards-Version: 3.6.2 (no changes required)
+  * Changed libxerces-java dep to libxerces2-java
+  * Removed libcrimson-java alternative
+
+  * Upload sponsored by Arnaud Vandyck
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Tue, 16 Aug 2005 22:17:07 +0200
+
+velocity (1.4-1) unstable; urgency=low
+
+  * New upstream release (closes: #245492)
+  * Upstream license has changed to Apache Software License 2.0
+  * Build system changed to cdbs with kaffe, jikes, gjdoc
+  * Move to main as werken.xpath is now in main
+  * Enabled junit tests during build
+    + patched VelocityServletTest to compile against libservlet2.3-java
+    + patched testcases.xml ant build file for runtime libraries
+  * Modified build.xml (04_buildxml.patch)
+    + Set javac target=1.3 to support JDK 1.3 vm's
+    + Excluded test files from jar and javadoc
+  * Disabled compilation of examples - only ship source
+  * Standards-Version: 3.6.1 (no changes required)
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Tue, 19 Apr 2005 20:26:02 +0200
+
+velocity (1.3.1-2) unstable; urgency=low
+
+  * fixed FTBFS (Closes: #299301)
+  * adjusted jdom dependency to libjdom0-java
+  * changed maintainer to Debian Java Maintainers as
+    requested by Takashi Okamoto for comaintaining
+  * avdyk: added Wolfgang and myself as uploaders
+
+ -- Wolfgang Baer <WBaer@gmx.de>  Mon, 14 Mar 2005 19:50:14 +0100
+
+velocity (1.3.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takashi Okamoto <tora@debian.org>  Sat, 23 Aug 2003 22:36:32 +0900
+
+velocity (1.3+1.3.1rc2-1) unstable; urgency=low
+
+  * new upstread release.
+
+ -- Takashi Okamoto <tora@debian.org>  Sat, 31 Aug 2002 10:45:41 +0900
+
+velocity (1.2-2) unstable; urgency=low
+
+  * fixed the documentation bug in control file.(Closes: #125454)
+
+ -- Takashi Okamoto <tora@debian.org>  Wed, 19 Dec 2001 16:24:44 +0900
+
+velocity (1.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takashi Okamoto <tora@debian.org>  Thu, 13 Dec 2001 13:07:39 +0900
+
+velocity (1.1.99rc3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takashi Okamoto <tora@debian.org>  Wed, 28 Nov 2001 23:52:23 +0900
+
+velocity (1.1-3) unstable; urgency=low
+
+  * add suggests.
+  * add depend for avalon logkit.
+
+ -- Takashi Okamoto <tora@debian.org>  Thu, 27 Sep 2001 20:05:57 +0900
+
+velocity (1.1-2) unstable; urgency=low
+
+  * uncompressed examples *.java
+  * fixed dependency problem.
+  * fixed and improved bugs (closes: #109567,#109563,#109588)
+
+ -- Takashi Okamoto <tora@debian.org>  Thu, 23 Aug 2001 11:13:57 +0900
+
+velocity (1.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Takashi Okamoto <tora@debian.org>  Wed, 15 Aug 2001 08:57:18 +0900
+
+Local variables:
+mode: debian-changelog
+End:

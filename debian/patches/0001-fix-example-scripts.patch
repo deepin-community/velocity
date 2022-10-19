@@ -1,0 +1,63 @@
+From: Onkar Shinde <onkarshinde@ubuntu.com>
+Date: Thu, 15 Sep 2011 17:18:35 +0200
+Subject: fix example scripts
+
+---
+ examples/app_example1/example.sh          |    2 +-
+ examples/app_example2/example2.sh         |    2 +-
+ examples/context_example/dbcontexttest.sh |    2 +-
+ examples/logger_example/logger_example.sh |    2 +-
+ examples/xmlapp_example/xmlapp_example.sh |    2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/examples/app_example1/example.sh b/examples/app_example1/example.sh
+index 777224b..45c50f9 100755
+--- a/examples/app_example1/example.sh
++++ b/examples/app_example1/example.sh
+@@ -1,4 +1,4 @@
+-# !/bin/sh
++#!/bin/sh
+ 
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+diff --git a/examples/app_example2/example2.sh b/examples/app_example2/example2.sh
+index 8c154d9..e12694d 100755
+--- a/examples/app_example2/example2.sh
++++ b/examples/app_example2/example2.sh
+@@ -1,4 +1,4 @@
+-# !/bin/sh
++#!/bin/sh
+ 
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+diff --git a/examples/context_example/dbcontexttest.sh b/examples/context_example/dbcontexttest.sh
+index ab2e43a..cf9146f 100755
+--- a/examples/context_example/dbcontexttest.sh
++++ b/examples/context_example/dbcontexttest.sh
+@@ -1,4 +1,4 @@
+-# !/bin/sh
++#!/bin/sh
+ 
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+diff --git a/examples/logger_example/logger_example.sh b/examples/logger_example/logger_example.sh
+index 4cf2cf5..3a4c1d8 100755
+--- a/examples/logger_example/logger_example.sh
++++ b/examples/logger_example/logger_example.sh
+@@ -1,4 +1,4 @@
+-# !/bin/sh
++#!/bin/sh
+ 
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+diff --git a/examples/xmlapp_example/xmlapp_example.sh b/examples/xmlapp_example/xmlapp_example.sh
+index 5bacf41..8108237 100755
+--- a/examples/xmlapp_example/xmlapp_example.sh
++++ b/examples/xmlapp_example/xmlapp_example.sh
+@@ -1,4 +1,4 @@
+-# !/bin/sh
++#!/bin/sh
+ 
+ # Licensed to the Apache Software Foundation (ASF) under one
+ # or more contributor license agreements.  See the NOTICE file
+-- 
